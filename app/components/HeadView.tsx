@@ -8,6 +8,7 @@ import { useSelector } from "react-redux"
 import { useEffect, useMemo, useState } from "react"
 import { EditorState } from '@/app/interface/types'
 import { initialState } from "../features/editor/editorSlice"
+import { Plus } from "lucide-react"
 
 const HeadView = () => {
 
@@ -42,25 +43,25 @@ const HeadView = () => {
     const memoisedBackground = useMemo(() => backgroundColor, [backgroundColor])
 
     return (
-        <div className="w-[85%] h-[60vh] m-auto xl:w-[60%] xl:h-[60vh] border border-black left-[8%] lg:left-[10%] xl:left-[34%] top-[20%] overflow-x-auto rounded-md bg-white md:absolute px-3 ">
+        <div className=" rounded-md px-3">
 
-            <div className="flex justify-center pb-10 overflow-x-auto w-[1100px] h-full" id="banner-image">
-                <div className="w-full h-[333px] flex justify-center items-center overflow-x-auto m-auto mt-24 relative cursor-pointer md:cursor-auto" onClick={handleClick}>
-                    <div className={`w-[70%] h-[70%] ${designMode == "light" ? "bg-white border border-gray-950" : "bg-gray-950"} rounded-lg p-10 z-50 duration-200 delay-150 ease-linear`} >
+            <div className="flex justify-center w-[1100px] h-fit" id="banner-image">
+                <div className="w-full h-[350px] flex justify-center items-center m-auto relative cursor-pointer md:cursor-auto" onClick={handleClick}>
+                    <div className={`w-[70%] h-[70%] ${!designMode ? "bg-white border border-gray-950" : "bg-gray-950"} rounded-lg p-10 z-30 duration-200 delay-150 ease-linear`} >
                         <div className="flex justify-between w-full">
                             <div className="flex gap-4">
                                 <Image src={profileImage} width={75} height={75} alt="" className="w-[4.7rem] h-[4.7rem] rounded-full object-cover object-center"></Image>
                                 <div>
-                                    <h2 className={`text-2xl mt-1 inline-flex gap-2 ${designMode == "light" ? "text-black" : "text-white"}`}>{name}  {isVerified == "true" ? <span><Image src={verifiedIcon} alt="" /></span> : ""}</h2>
-                                    <p className={` mt-1 ${designMode == "light" ? "text-black" : "text-white"}`}>{username}</p>
+                                    <h2 className={`text-2xl mt-1 inline-flex gap-2 ${!designMode ? "text-black" : "text-white"}`}>{name}  {isVerified === true ? <span><Image src={verifiedIcon} alt="" /></span> : false}</h2>
+                                    <p className={` mt-1 ${!designMode ? "text-black" : "text-white"}`}>{username}</p>
                                 </div>
                             </div>
 
-                            <h2 className="text-2xl text-blue-500"><span className="text-3xl">+</span> Follow</h2>
+                            <h2 className="text-2xl text-blue-500 inline-flex items-center gap-1"><span className="text-3xl"><Plus /></span> Follow</h2>
                         </div>
 
                         <div className="w-full h-1/2 p-3 pr-10">
-                            <p className={`text-lg mt-3 -ml-1 leading-8 ${designMode == "light" ? "text-black" : "text-white"}`}>{message}</p>
+                            <p className={`text-lg mt-3 -ml-1 leading-8 ${!designMode ? "text-black" : "text-white"}`}>{message}</p>
                         </div>
                     </div>
                     {

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Raleway } from "next/font/google";
 import "./globals.css";
 import StoreProvider from "./providers/StoreProvider";
+import { Toaster } from "@/components/ui/sonner"
 const raleway = Raleway({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -19,6 +20,7 @@ export default function RootLayout({
       <body className={raleway.className}>
         <StoreProvider>
           {children}
+          <Toaster richColors position="top-center" />
         </StoreProvider>
       </body>
     </html>

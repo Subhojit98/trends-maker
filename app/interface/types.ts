@@ -5,8 +5,8 @@ export interface ContentState {
     profileImage: string;
     backgroundColor: string;
     pattern: number;
-    designMode: string;
-    isVerified: string;
+    designMode: boolean;
+    isVerified: boolean;
 }
 export interface EditorState {
     content: ContentState;

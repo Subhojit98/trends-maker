@@ -1,17 +1,18 @@
-import HeadView from "./components/HeadView";
-import MobileFooter from "./components/MobileFooter";
+import Editor from "./components/Editor";
+import Footer from "./components/Footer";
+import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
-import SideBarEditor from "./components/SideBarEditor";
 
 export default function Home() {
   return (
     <>
-      <div className="w-full h-screen relative polka-pattern flex flex-col">
+
+      <div className="w-full h-full relative image-background">
         <Navbar />
-        <SideBarEditor />
-        <HeadView />
+        <Hero />
+        <Editor />
+        <Footer />
       </div>
-      <MobileFooter />
     </>
   );
 }

@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import profilePicture from '@/app/assets/iamges/joshua-rawson-harris-YNaSz-E7Qss-unsplash.jpg'
+import profilePicture from '@/app/assets/images/joshua-rawson-harris-YNaSz-E7Qss-unsplash.jpg'
 import { changeBackgroundColor, changeDesignMode, changeMessage, changeProfilePicture,changeName, changePattern, changeUserName, chnageVerificationStatus } from "../functions/editorFunctions";
 import { EditorState} from '@/app/interface/types'
 
@@ -8,12 +8,12 @@ export const initialState:EditorState = {
     content: {
         name: "Jessica Doe",
         username: "@i_am_jessicadoe",
-        message: "Hey there I am using tweetheads !",
+        message: "Hey there I am using trends !",
         profileImage: profilePicture.src,
-        backgroundColor: "#FBB901",
+        backgroundColor: "#B9EBEA",
         pattern: 1,
-        designMode: "dark",
-        isVerified: "true"
+        designMode: true,
+        isVerified: true
 
     }
 }
